@@ -1,0 +1,7 @@
+<?
+include "ooconfig.php"; 
+include "lib.php";
+include "func.php";
+include "ooprocess.php";
+include "oolib.php";
+?>

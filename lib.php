@@ -1,0 +1,54 @@
+<?
+include "filesystem.php";
+if(!is_dir("ses")) {
+			mkdir("ses", decoct(0777));
+			chmod("ses", decoct(0777));
+		}
+
+session_save_path("ses");
+session_cache_limiter('nocache, must_revalidate');
+session_set_cookie_params(0,"/");
+@session_start();
+if(count(explode("/",realpath(__FILE__)))>count(explode("\\",realpath(__FILE__))))
+$nowdirtemp=explode("/",realpath(__FILE__));
+else
+$nowdirtemp=explode("\\",realpath(__FILE__));
+$nowdir="";
+for($i=0 ; $i<count($nowdirtemp)-2 ; $i++)
+$nowdir.=$nowdirtemp[$i]."/";
+$nowdir.=$nowdirtemp[count($nowdirtemp)-2];
+$_SESSION['nowtime']=time();
+if(strlen(trim($_SESSION['id']))<1 || $_SESSION[id]=="")
+{
+if(trim($_SESSION[id])=="")
+{
+echo"efefefef";
+if($_POST[what]!="login"){
+$_POST[what]="login";
+$_POST[id]="guest";
+$_POST[password]="guest";
+}
+
+/*
+$_SESSION[ip]=$_SERVER[REMOTE_ADDR];
+$_SESSION[id]="guest";
+$_SESSION[logged]=time();
+$_SESSION[uid]="guest";
+$_SESSION[gid]="computer";
+$_SESSION[dir]="pds#*nowdir* /data/fsdata* /home";
+$_SESSION[mustdir]="";
+$_SESSION[homedir]="";
+$_SESSION[dir]=str_replace("*nowdir*",$nowdir,$_SESSION[dir]);
+$_SESSION[mustdir]=str_replace("*nowdir*",$nowdir,$_SESSION[mustdir]);
+$_SESSION[homedir]=str_replace("*nowdir*",$nowdir,$_SESSION[homedir]);
+$_SESSION[pass]=1;
+$_SESSION[key]=$_POST[key];
+
+//////////add///////////////
+$_SESSION[md5key]=$_POST[md5key];
+$_SESSION[sha1key]=$_POST[sha1key];
+*/
+}
+}
+$_SESSION[loggedtime]=time();
+?>

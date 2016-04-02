@@ -1,0 +1,7 @@
+<?
+$sqlserver="localhost";
+$sqlid="root";
+$sqlpass="iladnuksql";
+$sqldb="iladnuk";
+$datadir="/home/owner/com/data/fsdata*/home";
+?>

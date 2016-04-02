@@ -1,0 +1,6 @@
+<?
+header("location:list.php");
+$orb="ip";
+include "head.php";
+?>
+

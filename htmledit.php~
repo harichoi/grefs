@@ -1,0 +1,57 @@
+<?
+include "head.php";
+
+$encpath=$_GET[file];
+$mode=2;
+if($_POST[filename]){
+$encpath=($_POST[filename]);
+$mode=1;
+}
+
+$realpath=urlde($encpath,$_SESSION[mustdir]);
+if($mode==1)
+{
+htmlsave($realpath,($_POST[text]));
+}
+
+?>
+<meta charset=UTF-8>
+<script src=php.js></script>
+<script src=gre.js></script>
+<script>
+function save(){
+wri.filename.value=(wri.filename.value);
+wri.mode.value=2;
+wri.submit();
+//return;
+}
+function load(){
+wri.filename.value=(wri.filename.value);
+wri.mode.value=1;
+wri.submit();
+}
+</script>
+</form>
+<form action="htmledit.php" name="wri" method="post" enctype=multipart/form-data>
+<input type=hidden value="2" name="mode"></input>
+<table border=1 bordercolor=blue width=100%><tr><td bgcolor=blue><font color=white>
+Address : <? echo ($realpath) ?> [<a href=list.php><font color=white>Back</font></a>]</font> 
+</td></tr><tr width><td>
+<input type=hidden size=50 name=filename value="<?=($encpath)?>"></input>
+</td>
+</tr>
+<td height=700>
+
+<div id=textdiv style='position:relative;float:left;width=100%;height=100%'>
+<?
+include("ckeditor/ckeditor.php");
+$CKEditor = new CKEditor();
+$CKEditor->basePath="ckeditor/";
+$CKEditor->config['height']='@@screen.height';
+$CKEditor->config['width']='@@screen.width';
+echo $CKEditor->editor("text",htmlload($realpath));
+
+?>
+</div>
+</td>
+</table>

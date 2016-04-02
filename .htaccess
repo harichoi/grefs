@@ -1,0 +1,15 @@
+php_flag magic_quotes_gpc Off
+php_value post_max_size 1000M
+php_value upload_max_size 1000M
+php_value max_execution_time 0
+php_value max_input_time 0
+php_value memory_limit 32M
+RewriteEngine On
+RewriteRule ^want.mp4 want.php
+RewriteRule ^want.mp3 want.php
+RewriteRule ^want.flv want.php
+RewriteRule ^want.avi want.php
+RewriteRule ^want.wma want.php
+RewriteRule ^want.wmv want.php
+RewriteRule ^want.wav want.php
+RewriteRule ^down/(\w+)/\w+ download.php?file=$1

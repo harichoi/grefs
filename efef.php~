@@ -1,0 +1,10 @@
+<pre>
+<?
+include "pclzip.lib.php";
+echo "rr";
+$zip=new PclZip("./eee.zip");
+$ee= $zip->listContent();
+print_r($ee);
+echo "uu";
+?>
+

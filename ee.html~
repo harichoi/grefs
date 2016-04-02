@@ -1,0 +1,31 @@
+<style>
+.firstmenu {
+padding-left : 0px;
+display:block;
+}
+.first li:hover {
+background : blue;
+}
+.firstmenu div{
+background:#dddddd;
+width:100px;
+height:20px;
+border: 1px solid black;
+}
+.firstmenu li:hover > ul {
+position:relative;
+top:-20px;
+left:99px;
+display:block;
+}
+</style>
+<ul class=firstmenu><li>[ROOT]<ul class=menu>
+<li><div> <a href=oo.php?what=move&dir=232f312f32> [2] </div></a>
+<ul class=menu>
+</ul></li><li> <a href=oo.php?what=move&dir=232f312f33> [3] </a>
+<ul class=menu>
+<li> <a href=oo.php?what=move&dir=232f312f332f34> [4] </a>
+<ul class=menu>
+<li> <a href=oo.php?what=move&dir=232f312f332f342f35> [5] </a>
+<ul class=menu>
+</ul></li></ul></li></ul></li></ul></li></ul>
